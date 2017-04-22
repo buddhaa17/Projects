@@ -1,0 +1,1 @@
+angular.module('gymResult',['commonModule','ngRoute']);

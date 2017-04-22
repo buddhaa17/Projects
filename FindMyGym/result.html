@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+
+</head>
+
+<body ng-controller="resultController">
+    <!-- Navigation -->
+ <div my-navbardirective></div>
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+       <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Please find the below available Gyms.
+                </h2>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+        <div ng-repeat = "item in items">
+        <div class="row">
+         <div class="col-md-7">
+              <a href="#/Gym/{{item.Gym.GymId}}"><h4> {{item.Gym.Name}}</h4></a>
+              <label> Address : {{item.Gym.Address1}}  {{item.Gym.Address2}}</label><br>
+              <label> Gym Owner: {{item.Owner.FirstName}} {{item.Owner.LastName}}</label><br>
+              <label>Mobile number:  {{item.Owner.MobileNumber}}</label><br>
+              <label>Email Id: {{item.Owner.Email}}</label>
+            </div>
+            <div class="col-md-3">
+                <a href="#">
+                    <img class="img-responsive" class="" ng-src="{{item.Gym.ImageUrl}}" alt="">
+                </a>
+            </div>
+           </div>
+           <hr>
+        </div>
+        
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+     <script src="js/angular-route.js"></script>
+    <script src="js/Scripts/Result/app.js"></script>
+    <script src="js/Scripts/Result/controller.js"></script>
+    <script src="js/Scripts/Common/app.js"></script>
+    <script src="js/Scripts/Common/Navbardirective.js"></script>
+
+</body>
+
+</html>

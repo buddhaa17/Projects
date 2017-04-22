@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GymApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Modern Business - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body  ng-controller="registrationController">
+
+    <!-- Navigation -->
+    <div my-navbardirective></div>
+ 
+    <!-- Page Content -->
+    <div  class="container">
+
+        <!-- User Details Start -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Registration</h2>
+            </div>
+            <div class="col-lg-12">
+
+                <ul id="myTab" class="nav nav-tabs nav-justified">
+                    <li class="active" id="service-one-link"><a data-toggle=""><i class="glyphicon glyphicon-user rightmargin"></i>User Details</a>
+                    </li>
+                    <li id="service-two-link"><a data-toggle=""><i class="glyphicon glyphicon-home rightmargin"></i> Gym Details</a>
+                    </li>
+                    <li id="service-three-link"><a data-toggle=""><i class="glyphicon glyphicon-picture rightmargin"></i>Upload Photos</a>
+                    </li>
+                    <li id="service-four-link"><a data-toggle=""><i class="glyphicon glyphicon-list-alt rightmargin"></i>Terms and Conditions</a>
+                    </li>
+                </ul>
+
+                <div id="myTabContent" class="tab-content">
+                    <div  ng-model ="registrationService" class="tab-pane fade active in" id="service-one">
+                      
+                        <div class="container">
+                            <div class="row">
+                                <form novalidate class="css-form">
+                                 <div class="col-lg-5">
+                                    <div class="required"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
+                                    <div class="form-group" id = "fname">
+                                        <label for="InputName" >Enter first name</label>
+                                        <div class="input-group">
+                                            <input type="text" ng-blur = "Validate('fname',firstName)" class="form-control" ng-model = "firstName"  placeholder="Enter Name" >
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                        <div class="error hide" id="error-fname">
+                                            <span class="glyphicon glyphicon-remove"></span><strong> Error! Please enter the first name</strong>
+                                         </div>
+                                    </div>
+
+                                    <div class="form-group" id = "lname">
+                                        <label for="InputEmail">Enter last name</label>
+                                        <div class="input-group">
+                                            <input type="text" ng-blur = "Validate('lname',lastName)"  ng-model = "lastName"class="form-control" placeholder="Enter last name">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                        <div class="error hide" id="error-lname">
+                                        <span class="glyphicon glyphicon-remove "></span><strong> Error! Please enter the last name</strong>
+                                        </div>
+                                    </div>
+
+                                     <div class="form-group" id = "pnumber">
+                                        <label for="InputName" >Enter Phone Number</label>
+                                        <div class="input-group">
+                                            <input type="text" ng-blur = "Validate('pnumber',phoneNumber)" class="form-control" ng-model = "phoneNumber"  placeholder="Enter Phone Number" >
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                        <div class="error hide" id="error-pnumber">
+                                            <span class="glyphicon glyphicon-remove"></span><strong> Error! Please enter the first name</strong>
+                                         </div>
+                                    </div>
+
+
+                                    <div class="form-group" id = "emailId">
+                                        <label for="InputEmail">Enter the Email address</label>
+                                        <div class="input-group">
+                                            <input ng-model="email" type="text" ng-blur = "Validate('emailId',email)" ng-model="email" class="form-control"  placeholder="Confirm Email">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                        <div class="error hide" id="error-emailId">
+                                        <span class="glyphicon glyphicon-remove"></span><strong> Error! Please enter the valid email address</strong>
+                                    </div>
+                                    </div>
+
+                                     <div class="form-group" id = "owneraddress1">
+                                        <label for="InputName" >Address line 1</label>
+                                        <div class="input-group">
+                                            <input type="text" ng-blur = "Validate('owneraddress1',ownerAddress1)" class="form-control" ng-model = "ownerAddress1"  placeholder="Enter the address" >
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                        <div class="error hide" id="error-owneraddress1">
+                                            <span class="glyphicon glyphicon-remove"></span><strong> Error! Please enter the addressline 1</strong>
+                                         </div>
+                                    </div>
+
+                                     <div class="form-group" id = "owneraddress2">
+                                        <label for="InputName" >Address line 2</label>
+                                        <div class="input-group">
+                                            <input type="text" ng-blur = "Validate('owneraddress2',ownerAddress2)" class="form-control" ng-model = "ownerAddress2"  placeholder="Enter the address" >
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                        <div class="error hide" id="error-owneraddress2">
+                                            <span class="glyphicon glyphicon-remove"></span><strong> Error! Please enter the addressline 2</strong>
+                                         </div>
+                                    </div>
+
+                                    <input type="submit" ng-click="ValidateAndMoveNext()"  name="submit" id="submit" value="Next" class="btn btn-info pull-right">
+                                </div>
+                            </form>
+                        </div>
+                     </div>
+                    </div>
+  <!-- User Details End -->
+  <!-- Gym Details Start -->
+                    <div class="tab-pane fade gymDetailsTab" id="service-two">
+                        <h4>Please enter the follwing Gym Details</h4>
+                   
+                     <div class="container">
+                     <div class="row">
+                     <div class="col-md-6">
+                          <div  class="row span6 offset3">
+                                <form role="form">
+                                 <div class="col-lg-8">
+                                    <div class="required"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
+                                    <div class="form-group" id="gym-name">
+                                        <label for="InputName">Enter Gym Name</label>
+                                        <div class="input-group ">
+                                            <input ng-model="gymName" ng-blur="Validate('gym-name',gymName)" type="text" class="form-control" name="InputName" id="gymName" placeholder="Enter Name">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                        <div class="error hide" id="error-gym-name">
+                                            <span class="glyphicon glyphicon-remove"></span><strong> Error! Please enter the Gym name</strong>
+                                         </div>
+                                    </div>
+                                    <div class="form-group" id="gym-address1">
+                                        <label for="">AddressLine1</label>
+                                        <div class="input-group">
+                                            <input ng-model="gymAddress1" ng-blur="Validate('gym-address1',gymAddress1)" type="text" class="form-control" id="gymAddress1" name="" placeholder="Enter address">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                        <div class="error hide" id="error-gym-address1">
+                                        <span class="glyphicon glyphicon-remove"></span><strong> Error! Please enter the gym address</strong>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="gym-address2">
+                                        <label for="">AddressLine2</label>
+                                        <div class="input-group">
+                                            <input type="text"  ng-model="gymAddress2" ng-blur="Validate('gym-address2',gymAddress2)" class="form-control" id="gymAddress2" placeholder="Enter address">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                                        </div>
+                                        <div class="error hide" id="error-gym-address2">
+                                        <span class="glyphicon glyphicon-remove"></span><strong> Error! Please enter address</strong>
+                                    </div>
+                                    </div>
+                                    <div class="">
+                                    <label for="">Enter Gym details</label>
+                                    <textarea class="form-control expandable" ng-model="gymDescription" type="text" id="myIn" placeholder="Enter Gym Details" rows="4"></textarea>
+                                     </div>
+                                </div>
+                            </form>
+                        </div>
+                     </div>
+                    <div class="col-md-6">
+                        <!-- Other Gym details should be here. -->
+                           <div  class="row span6 offset3">
+                                <form role="form">
+                                 <div class="col-lg-8">
+                                    <div class="form-group" id="gym-name">
+                                     <div class="input-group ">
+                                        <h4>Select your aminities</h4>
+                                        <div ng-repeat = "aminity in Aminities">
+                                             <div class="form-check">
+                                        <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" ng-model="aminity.IsSelected">
+                                        {{aminity.Name}}
+                                        </label>    
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <input ng-click="ValidateAndNextToImages()" type="submit" name="submit" id="submit" value="Next" class="btn btn-info pull-right">
+                                </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    </div>
+                           
+                     </div>
+                   </div>
+  <!-- Gym Details End -->
+
+<!-- Gym Images Start -->
+  <div class="tab-pane fade" id="service-three">
+      <h4>Please Upload the Gym Images</h4>
+  <div class="container ">
+        <div class="row">
+             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive imageHeightWidth"  ng-src="{{gymImageUrl1}}" alt="">
+                </a>
+                   <input type="file" ngf-select="onFileSelect($files, 'gymImage1')" class = "file" >
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive imageHeightWidth" height="300" width="400" ng-src="{{gymImageUrl2}}" alt="">
+                </a>
+                <input id="input-1" type="file" ngf-select="onFileSelect($files, 'gymImage2')" class="file">
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive imageHeightWidth" height="300" width="400" ng-src="{{gymImageUrl3}}" alt="">
+                </a>
+                <input id="input-1" type="file" ngf-select="onFileSelect($files, 'gymImage3')" class="file">
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href="#">
+                    <img class="img-responsive imageHeightWidth" height="300" width="400" ng-src="{{gymImageUrl4}}" alt="">
+                </a>
+                <input id="input-1" type="file" ngf-select="onFileSelect($files, 'gymImage4')" class="file">
+            </div>
+        </div>
+         <input ng-click ="ValidateAndMovetoTerms()" type="submit" name="submit" id="submit" value="Next" class="btn btn-info pull-right">
+    </div>
+</div>
+
+<!--Gym Images End -->
+<!-- Terms and Conditions start -->
+ 
+                    <div class="tab-pane fade" id="service-four">
+                        <h4>Please below find the terms and Conditions</h4>
+                       <ol>
+                        <li>The user and Gym details shoule be valid, if we found anything is invalid we will remove your 
+                            Gym details by notifying you.</li>
+                        <li>Images should be the the valid one and what is is currently present in your Gym.</li>
+                       </ol>
+    <div class="form-group">
+        <div class="col-xs-6 col-xs-offset-3">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="agree" value="agree" /> Agree with the terms and conditions
+                </label>
+            </div>
+               <div class="error hide" id="error-termsAndConditions">
+                <span class="glyphicon glyphicon-remove"></span><strong> Agree the terms and conditions in order to complete the registration.</strong>
+                </div><br>
+                <input ng-click ="DoRegister()" type="submit" name="submit" id="submit" value="Register" class="btn btn-info pull-right">
+        </div>
+
+    </div>
+
+                    </div>
+
+<!-- Gym Terms and Conditions end -->
+
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ng-file-upload.min.js"></script>
+
+    <script src="js/Scripts/Registration/app.js"></script>
+    <script src="js/Scripts/Registration/Controller.js"></script>
+    <script src="js/Scripts/Common/app.js"></script>
+    <script src="js/Scripts/Common/Navbardirective.js"></script>
+    </body>
+
+</html>

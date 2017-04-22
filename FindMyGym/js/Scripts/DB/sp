@@ -1,0 +1,2 @@
+SELECT gow.Firstname, gow.Lastname, gow.Email, gow.Phonenumber, gds.GymName, gds.GymAddressLine1, gds.GymAddressLine2, gimg.Url FROM gymowner gow inner join gymdetails gds on gow.Id = gds.OwnerId inner join gyymimages gimg on gimg.GymId = gds.Id
+where gds.GymAddressLine1 like '%sangavi%' or gds.GymAddressLine2 like '%sangavi%'
